@@ -1,12 +1,12 @@
-import request from "request-promise";
+import request from 'request-promise';
 
 export const getUserRepos = async (user: string) => {
-  const options = {
-    uri: `https://api.github.com/users/${user}/repos`,
-    method: 'GET',
-    headers: {'user-agent': 'Request-Promise'}//,
-    //json: true
-};
-  const response = await request(options);
-  return JSON.parse(response);
+    const options = {
+        uri: `https://api.github.com/users/${user}/repos`,
+        method: 'GET',
+        headers: { 'user-agent': 'Request-Promise' },
+    };
+
+    const response = await request(options);
+    return JSON.parse(response);
 };

@@ -1,9 +1,9 @@
-import BranchInfo from "./BranchInfo.interface";
+import BranchInfo from './branchInfo.interface';
 
 interface UserRepoInfo {
     reponame: string;
     ownerlogin: string;
     branchinfo: BranchInfo[];
-  }
+}
 
-  export default UserRepoInfo;
+export default UserRepoInfo;

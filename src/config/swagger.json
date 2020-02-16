@@ -6,18 +6,25 @@
     "host": "localhost:3000",
     "basePath": "/api/v1",
     "schemes": ["http"],
+    "accepts": ["application/json"],
     "produces": ["application/json"],
     "paths": {
-      "/search": {
+      "/userrepoinfo": {
         "get": {
-          "tags": ["Search Text"],
-          "summary": "Search by places using opencagedata service",
+          "tags": ["Get User repos information"],
+          "summary": "Given username and header “Accept: application/json”, finds all his github repositories for the user which are not forks and lists information - Repository Name,Owner Login,For each branch it’s name and last commit sha",
           "responses": {
             "200": {
               "description": "OK"
             },
             "400": {
               "description": "Bad request"
+            },
+            "406": {
+              "description": "Not acceptable"
+            },
+            "404": {
+              "description": "Resoursce not found"
             }
           },
           "content": {
@@ -25,9 +32,9 @@
           },
           "parameters": [
             {
-              "name": "q",
+              "name": "user",
               "in": "query",
-              "description": "Specifies the query string",
+              "description": "Specifies the user name",
               "required": true,
               "type": "string"
             }

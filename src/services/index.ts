@@ -1,3 +1,3 @@
-import userRepoInfoRoutes from "./userrepoinfo/routes";
+import userRepoInfoRoutes from './userrepoinfo/routes';
 
 export default [...userRepoInfoRoutes];

@@ -6,12 +6,13 @@
   "scripts": {
     "postinstall": "npx tsc",
     "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "start": "npx pm2 start pm2.yaml",
-    "test": "jest"
+    "startpm2": "npx pm2 start pm2.yaml",
+    "test": "jest",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "",
   "jest": {
     "verbose": true,
     "transform": {
@@ -50,7 +51,13 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "jest": "^23.6.0",
+    "prettier": "^1.19.1",
     "ts-jest": "^23.10.5"
   }
 }
